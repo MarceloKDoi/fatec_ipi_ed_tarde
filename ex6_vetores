@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main(){
+	int entrada[10],saida[10],i,j,k,n;
+	int soma=0,cont=0;
+	printf("inserir 10 inteiros com repeticao:\n");
+	
+	for(i=0;i<10;i++){
+		scanf("%d", &entrada[i]);
+		}
+	
+	for(i=0;i<10;i++){
+		for(j=i+1;j<10;j++){
+			if(entrada[i]==entrada[j]){
+				cont++;
+				soma = soma + entrada[i]/cont;
+			}
+			else{
+				cont = 0;
+				soma = 0;
+			}
+		}
+	}
+
+	for(k=0;k<10;k++){
+		if(cont!=0){
+			saida[k]=soma;
+		}
+		else{
+			saida[k]=entrada[i];
+		}
+			printf("\n%d", saida[k]);
+	}
+
+	return 0;
+}
