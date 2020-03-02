@@ -1,36 +1,37 @@
+#include <stdlib.h>
 #include <stdio.h>
 
-int main(){
-	int entrada[10],saida[10],i,j,k,n;
-	int soma=0,cont=0;
-	printf("inserir 10 inteiros com repeticao:\n");
-	
-	for(i=0;i<10;i++){
-		scanf("%d", &entrada[i]);
-		}
-	
-	for(i=0;i<10;i++){
-		for(j=i+1;j<10;j++){
-			if(entrada[i]==entrada[j]){
-				cont++;
-				soma = soma + entrada[i]/cont;
-			}
-			else{
-				cont = 0;
-				soma = 0;
-			}
-		}
-	}
 
-	for(k=0;k<10;k++){
-		if(cont!=0){
-			saida[k]=soma;
-		}
-		else{
-			saida[k]=entrada[i];
-		}
-			printf("\n%d", saida[k]);
-	}
+int main( void )
+{
+    /* Vetor de entrada de valores repetidos */
+    int vet[10],N;
+		printf("Declare 10 valores:\n");
+		scanf("%d", &N);
+    /* Vetor de saida */
+    int saida[10];
 
-	return 0;
+    int i, j, n = 0;
+    int tam = sizeof(vet) / sizeof(int);
+    /*  Vetor de Entrada */
+    printf("Antes: ");
+    for( i = 0; i < tam; i++ )
+        printf("%d ", vet[i] );
+    printf("\n");
+
+    /* Remove o valor duplicado */
+    for( i = 0; i < tam; i++)
+    {
+        for( j = 0; j < n; j++ )
+        {
+            if( vet[i] == saida[j] )
+                break;
+        }
+
+        if( j == n )
+        {
+            saida[n] = vet[i];
+            n++;
+        }
+    }
 }
