@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include<stdlib.h>
+//atualizacao
 
 int contem (int v[], int n,  int e){
 	int i;
